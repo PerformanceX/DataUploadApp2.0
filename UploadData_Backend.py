@@ -1,6 +1,7 @@
 import re
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import SentenceTransformerEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from pinecone import Pinecone as PineconeClient
 from langchain_community.vectorstores import Pinecone
 
@@ -74,7 +75,8 @@ def clean_chunks(docs_chunks):
 
 # Create embeddings instance
 def create_embeddings_load_data():
-    embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L12-v2")
+    embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L12-v2")
+
     return embeddings
 
 # Function to push data to Pinecone
