@@ -1,6 +1,5 @@
 import re
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import SentenceTransformerEmbeddings
 from langchain_huggingface import HuggingFaceEmbeddings
 from pinecone import Pinecone as PineconeClient
 from langchain_community.vectorstores import Pinecone
